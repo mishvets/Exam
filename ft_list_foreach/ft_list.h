@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshvets <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 14:06:17 by mshvets           #+#    #+#             */
-/*   Updated: 2019/02/11 14:06:20 by mshvets          ###   ########.fr       */
+/*   Created: 2019/03/04 13:16:53 by mshvets           #+#    #+#             */
+/*   Updated: 2019/03/04 13:16:55 by mshvets          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-int main(int arc, char **argv)
+typedef struct		s_list
 {
-//	brainfuck(argv[1]);
-//	ft_check_mate(arc, argv); // ".P..." "PKP.." ".A.Q." "R.R.." "RRRBR"
+	struct s_list	*next;
+	void			*data;
+}					t_list;
 
-//rostring start
-	if (arc == 2) //"   aaaaaa  bbbbbb   ccccc d e "
-	{
-		rostring(argv[1]);
-		write(1, "\n", 1);
-	}
-//rostring finish
-	system("leaks Exam -q");
-}
+void    ft_list_foreach(t_list *begin_list, void (*f)(void *));
+
+#endif
